@@ -66,8 +66,13 @@
     return contactCell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
+(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"Section:%ld Row:%ld selected and its data is %@",
+          (long)indexPath.section,(long)indexPath.row,self.dataSource2[indexPath.row]);
+}
 #pragma mark - UITableViewDelegate
-
 
 /*
  #pragma mark - Navigation
